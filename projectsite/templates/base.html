@@ -110,14 +110,26 @@
                 <p>Organizations</p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="#">
+            <li class="nav-item {% if request.resolver_match.url_name == 'orgmember-list' %}active{% endif %}">
+              <a href="{% url 'orgmember-list' %}">
+                <i class="la la-users"></i>
+                <p>Org Members</p>
+              </a>
+            </li>
+            <li class="nav-item {% if request.resolver_match.url_name == 'student-list' %}active{% endif %}">
+              <a href="{% url 'student-list' %}">
+                <i class="la la-user-graduate"></i>
+                <p>Students</p>
+              </a>
+            </li>
+            <li class="nav-item {% if request.resolver_match.url_name == 'college-list' %}active{% endif %}">
+              <a href="{% url 'college-list' %}">
                 <i class="la la-university"></i>
                 <p>Colleges</p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="#">
+            <li class="nav-item {% if request.resolver_match.url_name == 'program-list' %}active{% endif %}">
+              <a href="{% url 'program-list' %}">
                 <i class="la la-graduation-cap"></i>
                 <p>Programs</p>
               </a>
