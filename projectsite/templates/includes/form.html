@@ -1,11 +1,13 @@
-{% comment %} Render a Django form's fields with basic Bootstrap markup {% endcomment %}
-{% for field in form %}
-  <div class="form-group">
-    {{ field.label_tag }}
-    {{ field.errors }}
-    {{ field }}
-    {% if field.help_text %}
-      <small class="form-text text-muted">{{ field.help_text }}</small>
+{# Render a Django form's fields with Bootstrap row layout #} {% for field in
+form %}
+<div class="form-group row">
+  <label class="col-sm-3 col-form-label">{{ field.label_tag|safe }}</label>
+  <div class="col-sm-9">
+    {% if field.errors %}
+    <div class="text-danger">{{ field.errors }}</div>
+    {% endif %} {{ field }} {% if field.help_text %}
+    <small class="form-text text-muted">{{ field.help_text }}</small>
     {% endif %}
   </div>
+</div>
 {% endfor %}
