@@ -1,0 +1,54 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container-fluid">
+  <h4 class="page-title">Dashboard</h4>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Student Organizations</div>
+          <p class="card-category">
+            Showing all registered organizations within the PSUSphere system.
+          </p>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table
+              class="table table-head-bg-primary table-striped table-hover"
+            >
+              <thead>
+                <tr>
+                  <th scope="col">Organization Name</th>
+                  <th scope="col">College</th>
+                  <th scope="col">Program</th>
+                  <th scope="col">Description</th>
+                  <th scope="col" class="text-center">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for object in object_list %}
+                <tr>
+                  <td><strong>{{ object.name }}</strong></td>
+                  <td>{{ object.college }}</td>
+                  <td>{{ object.program }}</td>
+                  <td>{{ object.description|truncatechars:50 }}</td>
+                  <td class="text-center">
+                    <button class="btn btn-info btn-xs">View</button>
+                    <button class="btn btn-warning btn-xs">Edit</button>
+                  </td>
+                </tr>
+                {% empty %}
+                <tr>
+                  <td colspan="5" class="text-center text-muted">
+                    No organizations found. Please add some in the Admin panel.
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
