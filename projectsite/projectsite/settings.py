@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+import socket
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -48,7 +49,11 @@ INSTALLED_APPS = [
     "widget_tweaks",
 ]
 
-SITE_ID = 2
+if "pythonanywhere" in socket.gethostname():
+    SITE_ID = 2 # production site (psusphere.pythonanywhere.com)
+else:
+    SITE_ID = 1 # local site (127.0.0.1:8000)
+    
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
@@ -148,6 +153,7 @@ LOGOUT_REDIRECT_URL = '/accounts/login/' # after logout, go back to login
 ACCOUNT_LOGOUT_REDIRECT_URL = '/' # where to redirect after logout
 ACCOUNT_LOGOUT_ON_GET = True # logout immediately on GET
 ACCOUNT_LOGIN_METHODS = {"username", "email"} # allow login with username OR email
+ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = False # keep /accounts/login/ visible even for signed-in users
 ACCOUNT_SIGNUP_FIELDS = [
     "username*",
     "email*",
