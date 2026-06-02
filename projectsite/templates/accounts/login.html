@@ -1,5 +1,4 @@
-{% load socialaccount %}
-{% load static %}
+{% load socialaccount %} {% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,7 +7,10 @@
     <title>Sign In - PSUSphere</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <style>
       :root {
         --bg-1: #15143a;
@@ -24,15 +26,33 @@
         --button-text: #1b1c2d;
       }
 
-      * { box-sizing: border-box; }
+      * {
+        box-sizing: border-box;
+      }
       body {
         margin: 0;
         min-height: 100vh;
-        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-family:
+          Inter,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
         color: var(--text);
         background:
-          radial-gradient(circle at 12% 18%, rgba(128, 102, 255, 0.28) 0, rgba(128, 102, 255, 0.05) 18%, transparent 26%),
-          radial-gradient(circle at 85% 16%, rgba(123, 210, 255, 0.16) 0, rgba(123, 210, 255, 0.04) 18%, transparent 24%),
+          radial-gradient(
+            circle at 12% 18%,
+            rgba(128, 102, 255, 0.28) 0,
+            rgba(128, 102, 255, 0.05) 18%,
+            transparent 26%
+          ),
+          radial-gradient(
+            circle at 85% 16%,
+            rgba(123, 210, 255, 0.16) 0,
+            rgba(123, 210, 255, 0.04) 18%,
+            transparent 24%
+          ),
           linear-gradient(135deg, var(--bg-1), var(--bg-2));
         overflow-x: hidden;
       }
@@ -46,12 +66,30 @@
         box-shadow: 0 0 14px rgba(255, 255, 255, 0.55);
         opacity: 0.6;
       }
-      .stars span:nth-child(1) { left: 7%; top: 13%; }
-      .stars span:nth-child(2) { left: 16%; top: 31%; }
-      .stars span:nth-child(3) { right: 8%; top: 14%; }
-      .stars span:nth-child(4) { right: 18%; top: 26%; }
-      .stars span:nth-child(5) { left: 9%; bottom: 12%; }
-      .stars span:nth-child(6) { right: 13%; bottom: 18%; }
+      .stars span:nth-child(1) {
+        left: 7%;
+        top: 13%;
+      }
+      .stars span:nth-child(2) {
+        left: 16%;
+        top: 31%;
+      }
+      .stars span:nth-child(3) {
+        right: 8%;
+        top: 14%;
+      }
+      .stars span:nth-child(4) {
+        right: 18%;
+        top: 26%;
+      }
+      .stars span:nth-child(5) {
+        left: 9%;
+        bottom: 12%;
+      }
+      .stars span:nth-child(6) {
+        right: 13%;
+        bottom: 18%;
+      }
 
       .shell {
         min-height: 100vh;
@@ -78,9 +116,23 @@
         position: relative;
         padding: 54px;
         background:
-          radial-gradient(circle at 16% 22%, rgba(255,255,255,0.12) 0, rgba(255,255,255,0.02) 20%, transparent 36%),
-          radial-gradient(circle at 82% 68%, rgba(255,255,255,0.10) 0, rgba(255,255,255,0.02) 18%, transparent 30%),
-          linear-gradient(145deg, rgba(59, 25, 103, 0.92), rgba(29, 63, 163, 0.95));
+          radial-gradient(
+            circle at 16% 22%,
+            rgba(255, 255, 255, 0.12) 0,
+            rgba(255, 255, 255, 0.02) 20%,
+            transparent 36%
+          ),
+          radial-gradient(
+            circle at 82% 68%,
+            rgba(255, 255, 255, 0.1) 0,
+            rgba(255, 255, 255, 0.02) 18%,
+            transparent 30%
+          ),
+          linear-gradient(
+            145deg,
+            rgba(59, 25, 103, 0.92),
+            rgba(29, 63, 163, 0.95)
+          );
       }
 
       .visual::before,
@@ -124,7 +176,7 @@
         margin-bottom: 22px;
         border-radius: 24px;
         background: rgba(255, 255, 255, 0.12);
-        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
       }
 
       .brand-badge img {
@@ -151,7 +203,7 @@
 
       .panel {
         padding: 48px 44px 42px;
-        background: rgba(14, 15, 34, 0.70);
+        background: rgba(14, 15, 34, 0.7);
       }
 
       .panel h2 {
@@ -183,17 +235,29 @@
         font-weight: 600;
         letter-spacing: -0.01em;
         border: 1px solid rgba(255, 255, 255, 0.14);
-        transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease,
+          opacity 0.18s ease;
       }
-      .provider:hover { transform: translateY(-1px); opacity: .98; }
-      .provider.google { background: #ffffff; color: #20212d; }
-      .provider.github { background: #24292f; color: #ffffff; }
+      .provider:hover {
+        transform: translateY(-1px);
+        opacity: 0.98;
+      }
+      .provider.google {
+        background: #ffffff;
+        color: #20212d;
+      }
+      .provider.github {
+        background: #24292f;
+        color: #ffffff;
+      }
       .provider .dot {
         width: 14px;
         height: 14px;
         border-radius: 50%;
         background: currentColor;
-        opacity: .85;
+        opacity: 0.85;
       }
 
       .separator {
@@ -201,16 +265,16 @@
         align-items: center;
         gap: 12px;
         margin: 22px 0;
-        color: rgba(255,255,255,.48);
-        font-size: .82rem;
-        letter-spacing: .18em;
+        color: rgba(255, 255, 255, 0.48);
+        font-size: 0.82rem;
+        letter-spacing: 0.18em;
       }
       .separator::before,
       .separator::after {
         content: "";
         flex: 1;
         height: 1px;
-        background: rgba(255,255,255,.10);
+        background: rgba(255, 255, 255, 0.1);
       }
 
       .field {
@@ -219,8 +283,8 @@
       .field label {
         display: block;
         margin-bottom: 8px;
-        color: rgba(255,255,255,.84);
-        font-size: .9rem;
+        color: rgba(255, 255, 255, 0.84);
+        font-size: 0.9rem;
         font-weight: 600;
       }
       .field input {
@@ -232,13 +296,18 @@
         color: var(--text);
         padding: 0 14px;
         outline: none;
-        transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
+        transition:
+          border-color 0.18s ease,
+          box-shadow 0.18s ease,
+          background 0.18s ease;
       }
-      .field input::placeholder { color: rgba(245,247,255,.46); }
+      .field input::placeholder {
+        color: rgba(245, 247, 255, 0.46);
+      }
       .field input:focus {
-        border-color: rgba(255,255,255,.44);
-        box-shadow: 0 0 0 4px rgba(255,255,255,.06);
-        background: rgba(255,255,255,.14);
+        border-color: rgba(255, 255, 255, 0.44);
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.06);
+        background: rgba(255, 255, 255, 0.14);
       }
 
       .row {
@@ -247,17 +316,19 @@
         justify-content: space-between;
         gap: 12px;
         margin: 10px 0 16px;
-        color: rgba(255,255,255,.82);
-        font-size: .9rem;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 0.9rem;
       }
       .remember {
         display: inline-flex;
         align-items: center;
         gap: 8px;
       }
-      .remember input { accent-color: #ffffff; }
+      .remember input {
+        accent-color: #ffffff;
+      }
       .row a {
-        color: rgba(255,255,255,.92);
+        color: rgba(255, 255, 255, 0.92);
         text-decoration: none;
       }
 
@@ -266,7 +337,7 @@
         padding: 12px 14px;
         border-radius: 14px;
         background: rgba(255, 92, 92, 0.12);
-        border: 1px solid rgba(255, 92, 92, 0.20);
+        border: 1px solid rgba(255, 92, 92, 0.2);
         color: #ffd6d6;
       }
 
@@ -279,37 +350,58 @@
         color: var(--button-text);
         font-size: 0.95rem;
         font-weight: 800;
-        letter-spacing: .04em;
+        letter-spacing: 0.04em;
         text-transform: uppercase;
         cursor: pointer;
-        box-shadow: 0 12px 24px rgba(0,0,0,.22);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
       }
 
       .footer {
         margin-top: 16px;
         text-align: center;
-        color: rgba(255,255,255,.74);
-        font-size: .92rem;
+        color: rgba(255, 255, 255, 0.74);
+        font-size: 0.92rem;
       }
-      .footer a { color: #fff; font-weight: 700; text-decoration: none; }
+      .footer a {
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+      }
 
       @media (max-width: 960px) {
-        .card { grid-template-columns: 1fr; min-height: auto; }
-        .visual { min-height: 330px; }
-        .panel { padding: 34px 24px 30px; }
+        .card {
+          grid-template-columns: 1fr;
+          min-height: auto;
+        }
+        .visual {
+          min-height: 330px;
+        }
+        .panel {
+          padding: 34px 24px 30px;
+        }
       }
 
       @media (max-width: 520px) {
-        .shell { padding: 14px; }
-        .visual { padding: 28px 20px; }
-        .panel { padding: 26px 18px 24px; }
-        .row { flex-direction: column; align-items: flex-start; }
+        .shell {
+          padding: 14px;
+        }
+        .visual {
+          padding: 28px 20px;
+        }
+        .panel {
+          padding: 26px 18px 24px;
+        }
+        .row {
+          flex-direction: column;
+          align-items: flex-start;
+        }
       }
     </style>
   </head>
   <body>
     <div class="stars" aria-hidden="true">
-      <span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span
+      ><span></span>
     </div>
 
     <div class="shell">
@@ -318,58 +410,89 @@
           <div class="brand">
             <div>
               <div class="brand-badge">
-                <img src="{% static 'img/logo.png' %}" alt="PSUSphere" onerror="this.style.display='none'">
+                <img
+                  src="{% static 'img/logo.png' %}"
+                  alt="PSUSphere"
+                  onerror="this.style.display = 'none'"
+                />
               </div>
               <h1>PSUSphere</h1>
-              <p>Manage student organizations, programs, and members in one place.</p>
+              <p>
+                Manage student organizations, programs, and members in one
+                place.
+              </p>
             </div>
           </div>
         </div>
 
         <div class="panel">
           <h2>Sign in</h2>
-          <div class="sub">Use your email and password, or continue with a connected provider.</div>
+          <div class="sub">
+            Use your email and password, or continue with a connected provider.
+          </div>
 
           {% if socialaccount_providers %}
-            <div class="provider-group">
-              {% for provider in socialaccount_providers %}
-                {% if provider.id == 'github' %}
-                  <a class="provider github" href="{% provider_login_url provider.id %}"><span class="dot"></span>Continue with {{ provider.name }}</a>
-                {% else %}
-                  <a class="provider google" href="{% provider_login_url provider.id %}"><span class="dot"></span>Continue with {{ provider.name }}</a>
-                {% endif %}
-              {% endfor %}
-            </div>
-            <div class="separator">OR USE EMAIL</div>
-          {% endif %}
-
-          {% if form.non_field_errors %}
-            <div class="errors">
-              {% for error in form.non_field_errors %}
-                <div>{{ error }}</div>
-              {% endfor %}
-            </div>
+          <div class="provider-group">
+            {% for provider in socialaccount_providers %} {% if provider.id ==
+            'github' %}
+            <a
+              class="provider github"
+              href="{% provider_login_url provider.id %}"
+              ><span class="dot"></span>Continue with {{ provider.name }}</a
+            >
+            {% else %}
+            <a
+              class="provider google"
+              href="{% provider_login_url provider.id %}"
+              ><span class="dot"></span>Continue with {{ provider.name }}</a
+            >
+            {% endif %} {% endfor %}
+          </div>
+          <div class="separator">OR USE EMAIL</div>
+          {% endif %} {% if form.non_field_errors %}
+          <div class="errors">
+            {% for error in form.non_field_errors %}
+            <div>{{ error }}</div>
+            {% endfor %}
+          </div>
           {% endif %}
 
           <form method="post" action="{% url 'account_login' %}">
             {% csrf_token %}
             <div class="field">
               <label for="id_login">Email or Username</label>
-              <input type="text" name="login" id="id_login" placeholder="hello@example.com" value="{{ form.login.value|default_if_none:'' }}" required>
+              <input
+                type="text"
+                name="login"
+                id="id_login"
+                placeholder="hello@example.com"
+                value="{{ form.login.value|default_if_none:'' }}"
+                required
+              />
             </div>
             <div class="field">
               <label for="id_password">Password</label>
-              <input type="password" name="password" id="id_password" placeholder="Enter your password" required>
+              <input
+                type="password"
+                name="password"
+                id="id_password"
+                placeholder="Enter your password"
+                required
+              />
             </div>
             <div class="row">
-              <label class="remember"><input type="checkbox" name="remember" id="id_remember"> Remember me</label>
+              <label class="remember"
+                ><input type="checkbox" name="remember" id="id_remember" />
+                Remember me</label
+              >
               <a href="{% url 'account_reset_password' %}">Forgot password?</a>
             </div>
             <button class="submit" type="submit">Sign in</button>
           </form>
 
           <div class="footer">
-            Don't have an account? <a href="{% url 'account_signup' %}">Create one</a>
+            Don't have an account?
+            <a href="{% url 'account_signup' %}">Create one</a>
           </div>
         </div>
       </section>
