@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import redirect
 from studentorg.views import (
     HomePageView,
     OrganizationList,
@@ -40,10 +41,17 @@ from studentorg.views import (
     OrgMemberDeleteView,
 )
 
+
+def root_redirect(request):
+    if request.user.is_authenticated:
+        return redirect('home')
+    return redirect('account_login')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("allauth.urls")),
-    path('', HomePageView.as_view(), name='home'),
+    path('', root_redirect),
+    path('home/', HomePageView.as_view(), name='home'),
     path('organization_list', OrganizationList.as_view(), name='organization-list'),
     path('organization_list/add', OrganizationCreateView.as_view(), name='organization-add'),
     path('organization_list/<int:pk>', OrganizationUpdateView.as_view(), name='organization-update'),
